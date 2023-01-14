@@ -1,2 +1,2 @@
 # cheapper
-Pricing, but better
+Pricing, but better!
