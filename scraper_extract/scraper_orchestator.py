@@ -68,6 +68,10 @@ class ScraperOrchestrator():
 
         self.scraper.close_popup_store()
 
+        time.sleep(randint(3, 6))
+
+        self.scraper.close_popup_suscription()
+
         while not self.scraper.last_page:
             
             time.sleep(randint(3, 6))
