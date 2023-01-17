@@ -6,17 +6,18 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class TataScraper():
 
-    def __init__(self, driver, link, ecomm_name, df):
+    def __init__(self, driver, link, ecomm_name, date, df):
         
         self.driver = driver
         self.df = df
         self.link = link
         self.last_page = False
         self.ecomm_name = ecomm_name
+        self.date = date
         
     def go_to_website(self):
 
-        print('go_to_website')
+        print(f'go_to_website: {self.link}')
         self.driver.get(self.link) # go to link
         self.driver.implicitly_wait(randint(5, 10)) # wait a random of up to 10 seconds
 
@@ -87,7 +88,7 @@ class TataScraper():
                         except IndexError:
                             prices.append('')
 
-                    self.df.loc[len(self.df.index)] = [self.ecomm_name, name,src,prices[0],prices[1]]
+                    self.df.loc[len(self.df.index)] = [self.date, self.ecomm_name, name,src,prices[0],prices[1]]
 
         except NoSuchElementException:
             self.last_page = True

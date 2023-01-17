@@ -1,3 +1,8 @@
 1) al src de devoto / disco cambiarle le tamaño en los numeros de la imagen, a 1000
 
 2) al src de tiendainglesa cambiarle el nombre del src en la direccion de small a large
+
+3) to do: 
+    a) add date 
+    b) scraper el dorado 
+    c) scraper el clon

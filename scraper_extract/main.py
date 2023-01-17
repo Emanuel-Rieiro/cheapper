@@ -1,12 +1,5 @@
-import urllib
-import requests
+import datetime
 import pandas as pd
-from random import randint
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import ElementClickInterceptedException
-from selenium.common.exceptions import ElementNotInteractableException
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium import webdriver
 from scraper_orchestator import ScraperOrchestrator
 
@@ -17,14 +10,17 @@ if __name__ == '__main__':
     driver.maximize_window() 
 
     # Dataframe for data
-    df = pd.DataFrame(columns = ['ecomm_name','name','src','price_1','price_2'])
+    df = pd.DataFrame(columns = ['date','ecomm_name','name','src','price_1','price_2'])
 
     # Get links of pages we are scraping
     with open('links.txt', 'r') as links_txt: links = links_txt.readlines()
 
+    # Date
+    date = datetime.datetime.today().strftime('%d-%m-%Y')
+
     # Loop trough the links, updating our dataset
     for link in links:
-        web_scraper = ScraperOrchestrator(driver, link, df)
+        web_scraper = ScraperOrchestrator(driver, link, date, df)
         df = web_scraper.df
 
-    df.to_csv('webscraping_results.csv')
+    df.to_csv(f'webscraping_results_{date}.csv')
