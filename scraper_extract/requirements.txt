@@ -6,7 +6,6 @@ beautifulsoup4==4.11.1
 boto3==1.26.50
 botocore==1.29.50
 bs4==0.0.1
-certifi @ file:///C:/b/abs_85o_6fm0se/croot/certifi_1671487778835/work/certifi
 cffi==1.15.1
 charset-normalizer==3.0.1
 colorama==0.4.6

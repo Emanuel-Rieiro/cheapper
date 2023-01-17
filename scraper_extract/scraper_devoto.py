@@ -78,8 +78,10 @@ class DevotoScraper():
         print('goto_next_page')
         pager_container = self.driver.find_element(By.CLASS_NAME, 'pager.bottom')
 
+        footer = self.driver.find_element(By.CLASS_NAME, 'contenedor-apps')
+
         actions = ActionChains(self.driver)
-        actions.move_to_element(pager_container).perform()
+        actions.move_to_element(footer).perform()
 
         try:
             pager_container.find_element(By.CLASS_NAME,'next').click()
