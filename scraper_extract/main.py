@@ -1,9 +1,9 @@
 import datetime
 import pandas as pd
 from selenium import webdriver
-from scraper_orchestator import ScraperOrchestrator
+from scraper_extract.scraper_orchestator import ScraperOrchestrator
 
-if __name__ == '__main__':
+def main():
 
     # Starting the driver in full-screen
     driver = webdriver.Chrome('./chromedriver')
@@ -23,4 +23,14 @@ if __name__ == '__main__':
         web_scraper = ScraperOrchestrator(driver, link, date, df)
         df = web_scraper.df
 
-    df.to_csv(f'webscraping_results_{date}.csv')
+    path = f'tmp/webscraping_results_{date}.csv'
+
+    df.to_csv(path, index = False)
+
+    return path
+
+if __name__ == '__main__':
+
+    file = main()
+
+    print(f'{file} succesfully created')

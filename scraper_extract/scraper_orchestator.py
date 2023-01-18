@@ -1,12 +1,11 @@
 import time
-import datetime
 from random import randint
-from scraper_tata import TataScraper
-from scraper_devoto import DevotoScraper
-from scraper_disco import DiscoScraper
-from scraper_tienda import TiendaScraper
-from scraper_eldorado import DoradoScraper
-from scraper_elclon import ClonScraper
+from scraper_extract.scraper_tata import TataScraper
+from scraper_extract.scraper_devoto import DevotoScraper
+from scraper_extract.scraper_disco import DiscoScraper
+from scraper_extract.scraper_tienda import TiendaScraper
+from scraper_extract.scraper_eldorado import DoradoScraper
+from scraper_extract.scraper_elclon import ClonScraper
 
 class ScraperOrchestrator():
 
