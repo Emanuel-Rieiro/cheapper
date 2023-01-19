@@ -62,6 +62,9 @@ class TataScraper():
         except NoSuchElementException:
             print('Element does not exist')
 
+        except ElementClickInterceptedException:
+            print('popup decreto not clickable')
+
     def get_item_data(self):
         
         print('get_item_data')

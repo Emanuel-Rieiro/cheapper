@@ -13,15 +13,18 @@ def main():
     df = pd.DataFrame(columns = ['date','ecomm_name','name','src','price_1','price_2'])
 
     # Get links of pages we are scraping
-    with open('links.txt', 'r') as links_txt: links = links_txt.readlines()
+    with open('scraper_extract/links.txt', 'r') as links_txt: links = links_txt.readlines()
 
     # Date
     date = datetime.datetime.today().strftime('%d-%m-%Y')
 
     # Loop trough the links, updating our dataset
     for link in links:
-        web_scraper = ScraperOrchestrator(driver, link, date, df)
-        df = web_scraper.df
+        try:
+            web_scraper = ScraperOrchestrator(driver, link, date, df)
+            df = web_scraper.df
+        except:
+            print('Error en:', link)
 
     path = f'tmp/webscraping_results_{date}.csv'
 

@@ -1,6 +1,7 @@
 # Mine
 chromedriver.exe
 credentials*
+complete*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -30,6 +30,8 @@ class ScraperOrchestrator():
         
         self.scraper.go_to_website()
 
+        time.sleep(randint(3, 6))
+        
         self.scraper.close_popup_store()
 
         time.sleep(randint(3, 6))
