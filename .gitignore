@@ -2,6 +2,7 @@
 chromedriver.exe
 credentials*
 complete*
+Imagenes
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
