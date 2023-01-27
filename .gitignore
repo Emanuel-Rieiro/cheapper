@@ -3,6 +3,10 @@ chromedriver.exe
 credentials*
 complete*
 Imagenes
+anotactiones secretas.txt
+cheapper-webscraper.pem
+cheapper-webscraper.ppk
+model_weights.pth
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
